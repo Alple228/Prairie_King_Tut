@@ -1,7 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://b8l1fygdh4xh5"]
+[gd_scene load_steps=3 format=3 uid="uid://b8l1fygdh4xh5"]
 
 [ext_resource type="PackedScene" uid="uid://duw4k1cb40vf3" path="res://scenes/world.tscn" id="1_bn3h3"]
+[ext_resource type="PackedScene" uid="uid://bdkivh2yxwxg3" path="res://scenes/player.tscn" id="2_xlm24"]
 
 [node name="Main" type="Node"]
 
 [node name="World" parent="." instance=ExtResource("1_bn3h3")]
+
+[node name="Player" parent="." instance=ExtResource("2_xlm24")]
