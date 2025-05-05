@@ -1,20 +1,22 @@
 extends CharacterBody2D
 
-var speed : int
+var speed : int = 200
 var screen_size : Vector2
 
 func _ready():
 	screen_size = get_viewport_rect().size
 	# since screen_size is a vector, this places the player in the middle of the x and y axes
 	position = screen_size / 2
-	speed = 200
-	print("Screen size:", screen_size, "\nPlayer position:", position)
+	#speed = 200
+	$AnimatedSprite2D.stop() # Ensure neutral animation at spawn
+	$AnimatedSprite2D.frame = 0 # Neutral frame
+	print("Screen size:", screen_size, "Initial position:", position)
 
 func get_input(): 
 	var input_dir = Input.get_vector("left", "right", "up", "down")
 	velocity = input_dir * speed
 	
-
+	
 func _physics_function(_delta):
 	# player movement
 	get_input()
